@@ -30,7 +30,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <nav className="h-[var(--navigation-height)] cursor-pointer flex  border-b border-primary-300 pr-24 fixed w-full">
+    <nav className="h-[var(--navigation-height)] cursor-pointer flex  border-b border-primary-300 pr-24 fixed w-full ">
       <img
         src={logoImg}
         alt="logo"
