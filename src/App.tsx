@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import TechStack from "./components/TechStack";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <div className="pt-[--navigation-height] px-24">
         <Hero />
+        <TechStack />
       </div>
     </div>
   );

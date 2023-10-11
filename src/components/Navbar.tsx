@@ -30,11 +30,11 @@ const Navbar = () => {
     },
   ];
   return (
-    <nav className="h-[var(--navigation-height)] cursor-pointer flex  border-b border-primary-300 pr-24 fixed w-full ">
+    <nav className="h-[var(--navigation-height)] cursor-pointer flex  border-b border-primary-300 pr-24 fixed w-full backdrop-blur-lg z-10 ">
       <img
         src={logoImg}
         alt="logo"
-        className="h-[100px] w-[100px] bg-inherit border border-primary-300  rounded-full bg-primary-800"
+        className="h-[100px] w-[100px] bg-inherit border border-primary-300  rounded-full bg-[#0c0c1f]"
       />
 
       <ul

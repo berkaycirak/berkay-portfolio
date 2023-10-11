@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        hero: "url(../src/assets/bg.jpg)",
+      },
       colors: {
         primary: {
           100: "#ffffff",
@@ -31,6 +34,9 @@ export default {
         "5xl": "2.25rem",
         "6xl": "2.75rem",
         "7xl": "3.45rem",
+      },
+      boxShadow: {
+        glass: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
       },
     },
   },
