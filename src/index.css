@@ -6,11 +6,21 @@
   :root {
     --navigation-height: 3.8rem;
   }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
   body {
     height: 100vh;
     min-height: 100vh;
     color: #ffffff;
     background-color: #0c0c1d;
+  }
+
+  section {
+    height: 100vh;
+    scroll-snap-align: center;
   }
 
   /* TYPOGRAPHY */

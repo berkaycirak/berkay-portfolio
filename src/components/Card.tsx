@@ -1,7 +1,7 @@
-const Card = ({ imgUrl, name }: { imgUrl: string; name: string }) => {
+const Card = () => {
   return (
-    <div className="w-[100px] h-[100px]   backdrop-blur-[20px] cursor-pointer ">
-      <img src={imgUrl} alt={name} className="w-full h-full" />
+    <div className="w-[250px] h-[300px] relative border rounded-lg flex items-center justify-center shadow-glass backdrop-blur-[20px] cursor-pointer group">
+      Pharmapp
     </div>
   );
 };
