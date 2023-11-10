@@ -42,8 +42,9 @@ const Card = ({ title, description, testLink, techStack }: CardProps) => {
 
           <span className="text-center">
             <h5 className="mt-4 mb-2">Tech Stack</h5>
-            {techStack!.map((tech) => (
+            {techStack!.map((tech, i) => (
               <img
+                key={i}
                 src={`../src/assets/techIcons/${tech}.svg`}
                 className="w-[50px] h-[40px] mx-2 inline-block"
               />

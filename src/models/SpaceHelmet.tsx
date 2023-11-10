@@ -9,7 +9,8 @@ Title: Space Helmet
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useEffect, useState } from "react";
+import { lerp } from "three/src/math/MathUtils.js";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -22,15 +23,36 @@ type GLTFResult = GLTF & {
 
 export function SpaceHelmet(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/space_helmet.glb") as GLTFResult;
-
-  const { viewport } = useThree();
-
-  useFrame(() => {
-    console.log(viewport);
+  const [mousePos, setMousePos] = useState({
+    x: 0,
+    y: 0,
   });
+
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      setMousePos((prev) => ({
+        ...prev,
+        x: (2 * e.clientX) / window.innerWidth - 1,
+        y: -((2 * e.clientY) / window.innerHeight - 1),
+      }));
+    });
+
+    return () =>
+      window.removeEventListener("mousemove", (e) => {
+        setMousePos((prev) => ({
+          ...prev,
+          x: (2 * e.clientX) / window.innerWidth - 1,
+          y: -((2 * e.clientY) / window.innerHeight - 1),
+        }));
+      });
+  }, []);
+
   return (
     <group {...props} dispose={null}>
-      <group rotation={[0, 0, 0]} scale={2.3}>
+      <group
+        rotation={[lerp(-mousePos.y, 0, 0.5), lerp(mousePos.x, 0, 0.5), 0]}
+        scale={2.3}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -43,4 +65,4 @@ export function SpaceHelmet(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("../src/assets/space_helmet.glb");
+useGLTF.preload("/space_helmet.glb");

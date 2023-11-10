@@ -1,9 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-
+import { useProgress, Loader } from "@react-three/drei";
 import { SpaceHelmet } from "../models/SpaceHelmet";
 import { Environment, Float, OrbitControls } from "@react-three/drei";
+import { Suspense, useEffect } from "react";
 
 const Hero = () => {
+  const { progress } = useProgress();
+  useEffect(() => {
+    console.log(progress);
+  }, [progress]);
   return (
     <section className="flex items-center gap-4" id="About">
       <div>
@@ -18,21 +23,24 @@ const Hero = () => {
           apps
         </p>
       </div>
-      <div className=" flex-1 h-full flex items-center justify-center   ">
+      <div className=" flex-1 h-full flex items-center justify-center">
         <Canvas>
-          <ambientLight intensity={50} />
-          <OrbitControls
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            maxAzimuthAngle={Math.PI / 3}
-            minAzimuthAngle={-Math.PI / 3}
-          />
-          <Environment preset="city" />
-          <Float>
-            <SpaceHelmet />
-          </Float>
+          <Suspense fallback={null}>
+            <ambientLight intensity={50} />
+            <OrbitControls
+              enableZoom={false}
+              maxPolarAngle={Math.PI / 2}
+              maxAzimuthAngle={Math.PI / 3}
+              minAzimuthAngle={-Math.PI / 3}
+            />
+            <Environment preset="city" />
+            <Float>
+              <SpaceHelmet />
+            </Float>
+          </Suspense>
         </Canvas>
       </div>
+      <Loader />
     </section>
   );
 };
