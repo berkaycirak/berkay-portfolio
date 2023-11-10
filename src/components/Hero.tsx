@@ -1,17 +1,16 @@
 import { Canvas } from "@react-three/fiber";
-import { useProgress, Loader } from "@react-three/drei";
+import { Loader } from "@react-three/drei";
 import { SpaceHelmet } from "../models/SpaceHelmet";
 import { Environment, Float, OrbitControls } from "@react-three/drei";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
 const Hero = () => {
-  const { progress } = useProgress();
-  useEffect(() => {
-    console.log(progress);
-  }, [progress]);
   return (
-    <section className="flex items-center gap-4" id="About">
-      <div>
+    <section
+      className="flex flex-col   sm:flex-row items-center gap-4  "
+      id="About"
+    >
+      <div className=" w-full lg:min-w-[400px]  mt-32">
         <h1>Hello,</h1>
         <h1>
           I am <span className="text-green-400">Berkay,</span>
@@ -23,7 +22,7 @@ const Hero = () => {
           apps
         </p>
       </div>
-      {/* <div className=" flex-1 h-full flex items-center justify-center">
+      <div className=" w-full h-[500px] md:h-[600px] lg:h-[800px] ">
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={50} />
@@ -39,7 +38,8 @@ const Hero = () => {
             </Float>
           </Suspense>
         </Canvas>
-      </div> */}
+      </div>
+
       <Loader />
     </section>
   );

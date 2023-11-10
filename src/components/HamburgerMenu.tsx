@@ -1,9 +1,16 @@
 import { FaHamburger } from "react-icons/fa";
 import { tabs } from "./Navbar";
 import { cn } from "@/utils/cn";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-const HamburgerMenu = ({ onHamburgerClicked, isHamburgerClicked }) => {
+interface HamburgerMenuProps {
+  onHamburgerClicked: Dispatch<SetStateAction<boolean>>;
+  isHamburgerClicked: boolean;
+}
+const HamburgerMenu = ({
+  onHamburgerClicked,
+  isHamburgerClicked,
+}: HamburgerMenuProps) => {
   const [location, setLocation] = useState("about");
 
   const handleLocationChange = () => {
