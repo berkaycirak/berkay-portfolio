@@ -15,7 +15,7 @@ const Card = ({ title, description, testLink, techStack }: CardProps) => {
       <div
         onClick={() => setIsFlipped(!isFlipped)}
         className={twMerge(
-          "w-[300px] h-[400px] relative  rounded-lg flex items-center justify-center shadow-glass transition-[transform] duration-500 [transform-style:preserve-3d]  cursor-pointer group [&_div]:w-full [&_div]:h-full [&_div]:absolute [&_div]:[backface-visibility:hidden] [&_div]:rounded-lg select-none  ",
+          " w-[200px] h-[250px] 2xl:w-[300px] 2xl:h-[400px] relative  rounded-lg flex items-center justify-center shadow-glass transition-[transform] duration-500 [transform-style:preserve-3d]  cursor-pointer group [&_div]:w-full [&_div]:h-full [&_div]:absolute [&_div]:[backface-visibility:hidden] [&_div]:rounded-lg select-none  ",
           isFlipped && "[transform:rotateY(-180deg)]"
         )}
       >

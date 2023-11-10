@@ -13,10 +13,6 @@ function App() {
         <Projects />
         <TechStack />
         <SocialMediaContainer />
-
-        <div className="bg-green-500 w-[500px] h-[500px] mb-24  transition-[transform] duration-[5000ms]  hover:[transform:rotateY(180deg)]  ">
-          <div className="bg-red-500 w-[300px] h-[300px] mx-auto   ">Hello</div>
-        </div>
       </div>
     </div>
   );

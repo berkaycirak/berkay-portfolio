@@ -20,9 +20,7 @@ type GLTFResult = GLTF & {
 };
 
 export function SpaceHelmet(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF(
-    "../src/assets/space_helmet.glb"
-  ) as GLTFResult;
+  const { nodes, materials } = useGLTF("/space_helmet.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <group rotation={[0, 0, 0]} scale={2.3}>
