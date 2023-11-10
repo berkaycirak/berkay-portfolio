@@ -25,7 +25,7 @@ const TechStack = () => {
             key={i}
           >
             <img
-              src={`../src/assets/techIcons/${tech.name}.svg`}
+              src={`/${tech.name}.svg`}
               alt={tech.name}
               className="w-full h-full"
             />

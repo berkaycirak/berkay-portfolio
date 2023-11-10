@@ -45,7 +45,7 @@ const Card = ({ title, description, testLink, techStack }: CardProps) => {
             {techStack!.map((tech, i) => (
               <img
                 key={i}
-                src={`../src/assets/techIcons/${tech}.svg`}
+                src={`/${tech}.svg`}
                 className="w-[50px] h-[40px] mx-2 inline-block"
               />
             ))}
