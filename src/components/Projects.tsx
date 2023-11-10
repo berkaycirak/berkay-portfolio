@@ -7,7 +7,7 @@ const Projects = () => {
       id="Projects"
     >
       <h1 className="mb-24 text-green-400 ">Projects</h1>
-      <div className="flex gap-8 items-center justify-center">
+      <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
         <Card
           title="Pharmto"
           description="Pharmto recommends supplements to patients by analyzing test results and displaying them on the pharmacist's dashboard."

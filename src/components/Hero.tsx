@@ -23,7 +23,7 @@ const Hero = () => {
           apps
         </p>
       </div>
-      <div className=" flex-1 h-full flex items-center justify-center">
+      {/* <div className=" flex-1 h-full flex items-center justify-center">
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={50} />
@@ -39,7 +39,7 @@ const Hero = () => {
             </Float>
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
       <Loader />
     </section>
   );

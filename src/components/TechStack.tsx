@@ -15,13 +15,13 @@ const TechStack = () => {
   return (
     <section
       className="flex flex-col items-center justify-center"
-      id="Tech Stack"
+      id="Techologies"
     >
       <h1 className="text-green-400 mb-24">Tech Stack</h1>
-      <div className="flex r w-full items-center justify-center gap-8 ">
+      <div className=" grid grid-cols-3 lg:grid-flow-col lg:grid-cols-none w-full items-center justify-center gap-12 ">
         {techStackArray.map((tech, i) => (
           <div
-            className="w-[100px] h-[100px] relative  backdrop-blur-[20px] cursor-pointer group"
+            className=" w-[75px] h-[75px] lg:w-[100px] lg:h-[100px] relative  backdrop-blur-[20px] cursor-pointer group"
             key={i}
           >
             <img
