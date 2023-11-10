@@ -9,6 +9,7 @@ Title: Space Helmet
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useFrame, useThree } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -21,6 +22,12 @@ type GLTFResult = GLTF & {
 
 export function SpaceHelmet(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/space_helmet.glb") as GLTFResult;
+
+  const { viewport } = useThree();
+
+  useFrame(() => {
+    console.log(viewport);
+  });
   return (
     <group {...props} dispose={null}>
       <group rotation={[0, 0, 0]} scale={2.3}>
