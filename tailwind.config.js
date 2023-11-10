@@ -5,6 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         hero: "url(../src/assets/bg.jpg)",
+        pharmto: "url(../src/assets/pharmto.png)",
+        heroes: "url(../src/assets/heroes.png)",
       },
       colors: {
         primary: {

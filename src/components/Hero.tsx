@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 
 import { SpaceHelmet } from "../models/SpaceHelmet";
 import { Environment, Float, OrbitControls } from "@react-three/drei";
-// import heroImg from "@/assets/hero.png";
 
 const Hero = () => {
   return (
@@ -15,12 +14,11 @@ const Hero = () => {
         <h1>Web Developer</h1>
         <p className=" text-xl text-primary-300 ">
           I love building{" "}
-          <span className="text-green-400/80 font-bold">interactive</span> ,
-          digital experiences on the web
+          <span className="text-green-400/80 font-bold">interactive </span>
+          apps
         </p>
       </div>
       <div className=" flex-1 h-full flex items-center justify-center   ">
-        {/* <img src={heroImg} alt="hero" className="w-[800px]" /> */}
         <Canvas>
           <ambientLight intensity={50} />
           <OrbitControls
